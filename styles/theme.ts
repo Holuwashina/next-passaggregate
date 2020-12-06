@@ -23,7 +23,7 @@ const theme = createMuiTheme({
         },
 
         h2: {
-            fontFamily: ['Goldman','Roboto'].join(','),
+            fontFamily: ['Goldman', 'Roboto'].join(','),
             fontWeight: 700,
             letterSpacing: '0.05em',
             fontSize: '0.6rem',
@@ -95,6 +95,12 @@ const theme = createMuiTheme({
                 '&:hover': {
                     color: indigo[500],
                 },
+            },
+        },
+
+        MuiGrid: {
+            container: {
+                width: '100% !important'
             },
         },
 
