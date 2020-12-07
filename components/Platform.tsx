@@ -35,14 +35,14 @@ const Platforms = () => {
               {data.index === 0 && (
                 <SelectionCard
                   platform={UNIVERSITY}
-                  message='Select your admitted university & explore.'
+                  message='Select your admitted University & explore.'
                 />
               )}
 
               {data.index === 1 && (
                 <SelectionCard
                   platform={POLYTECHNIC}
-                  message='Select your admitted polytechnic & explore.'
+                  message='Select your admitted Polytechnic & explore.'
                 />
               )}
 

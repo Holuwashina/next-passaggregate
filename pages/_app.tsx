@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import theme, { themeIcon } from '../styles/theme';
 import Header from '../components/Header';
 import { IconContext } from 'react-icons'
+import Footer from '../components/Footer';
 
 function App({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -28,6 +29,7 @@ function App({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </IconContext.Provider>
       </ThemeProvider>
     </>

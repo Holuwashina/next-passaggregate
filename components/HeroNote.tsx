@@ -25,7 +25,7 @@ const HeroNote = () => {
     <div className={heronote.root}>
       <Grid
         container
-        spacing={1}
+        spacing={3}
         justify='center'
       >
         {noteCard.map((card) => (

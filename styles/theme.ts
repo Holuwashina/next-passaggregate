@@ -4,6 +4,9 @@ import 'fontsource-goldman';
 import 'fontsource-roboto';
 
 const theme = createMuiTheme({
+    //Global
+    spacing: 2,
+
     // Customizing the palette
     palette: {
         primary: {
@@ -43,7 +46,10 @@ const theme = createMuiTheme({
         body1: {
             fontWeight: 600,
             letterSpacing: '0.05em',
-            fontSize: '0.9rem',
+            fontSize: '0.7rem',
+            '@media (min-width:600px)': {
+                fontSize: '0.9rem',
+            }
         },
 
         body2: {
@@ -88,7 +94,7 @@ const theme = createMuiTheme({
                 },
             },
             textSizeSmall: {
-                fontSize: '0.65rem',
+                fontSize: '0.6rem',
             },
             textPrimary: {
                 color: indigo[900],
@@ -131,8 +137,11 @@ const theme = createMuiTheme({
         MuiFormLabel: {
             root: {
                 color: 'red',
-                fontSize: '0.9rem',
+                fontSize: '0.8rem',
                 fontWeight: 600,
+                '@media (min-width:600px)': {
+                    fontSize: '0.9rem',
+                }
             },
         },
 
@@ -154,9 +163,13 @@ const theme = createMuiTheme({
 
         MuiInputBase: {
             input: {
+                textTransform: 'uppercase',
                 color: 'red',
-                fontSize: '0.7rem',
+                fontSize: '0.6rem',
                 fontWeight: 600,
+                '@media (min-width:600px)': {
+                    fontSize: '0.7rem',
+                }
             },
         },
     },

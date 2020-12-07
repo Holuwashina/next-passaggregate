@@ -14,7 +14,13 @@ import {
 } from "@material-ui/core";
 
 interface props {
-  platform: any,
+  platform: {
+    index: string,
+    list: {
+      shortcode: string,
+      fullname: string
+    }[]
+  },
   message: string,
 };
 
@@ -45,14 +51,15 @@ const SelectionCard = ({ platform, message }: props) => {
               label={index}
             >
               <MenuItem value='DEFAULT'>DEFAULT</MenuItem>
-              {list.map((data:string) => (
-                <MenuItem key={data} value={data}>
-                  {data}
+              {list.map((data) => (
+                <MenuItem key={data.shortcode} value={data.fullname}>
+                  {data.shortcode}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
           <TextField
+          fullWidth
             size='small'
             variant='outlined'
             disabled
@@ -60,12 +67,12 @@ const SelectionCard = ({ platform, message }: props) => {
             value={select}
           />
           <Button
-            style={{ margin: "4px 10px 0" }}
+            style={{ marginTop: 10 }}
             disabled={select === "DEFAULT"}
             endIcon={<GraphicEqIcon />}
           >
             Explore
-      </Button>
+          </Button>
         </CardContent>
       </Card>
     </>
