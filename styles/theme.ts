@@ -19,6 +19,7 @@ const theme = createMuiTheme({
 
     typography: {
         h1: {
+            fontFamily: ['Goldman', 'Roboto'].join(','),
             fontWeight: 700,
             letterSpacing: '0.05em',
             fontSize: '1rem',

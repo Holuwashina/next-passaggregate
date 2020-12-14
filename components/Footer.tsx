@@ -19,9 +19,9 @@ const Footer = () => {
           <Grid item>
             <Button variant='text'>Terms & Conditions</Button>
           </Grid>
-          <Typography gutterBottom variant='body2'>
-          Copyright &#xa9; {year} Passaggregate Inc.
-        </Typography>
+          <Typography gutterBottom variant='body2' style={{margin: '12px 0'}}>
+            Copyright &#xa9; {year} Passaggregate Inc.
+          </Typography>
         </Grid>
       </Container>
     </div>

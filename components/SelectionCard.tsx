@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { makeStyles } from "@material-ui/core/styles";
-import Alert from "@material-ui/lab/Alert";
-import GraphicEqIcon from "@material-ui/icons/GraphicEq";
+import Link from 'next/link';
+import { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
+import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import {
   InputLabel,
   MenuItem,
@@ -10,24 +11,14 @@ import {
   TextField,
   Card,
   CardContent,
-  Button
-} from "@material-ui/core";
+  Button,
+} from '@material-ui/core';
+import { PlatformDfn } from '../utils/types';
 
-interface props {
-  platform: {
-    index: string,
-    list: {
-      shortcode: string,
-      fullname: string
-    }[]
-  },
-  message: string,
-};
-
-const SelectionCard = ({ platform, message }: props) => {
-  const { index, list } = platform;
+const SelectionCard = ({ platform }: PlatformDfn) => {
+  const { platformList } = platform;
   const selectionCard = useStyles();
-  const [select, setSelect] = useState("DEFAULT");
+  const [select, setSelect] = useState(platformList[0].name);
 
   const handleSelect = (e: React.ChangeEvent<{ value: any }>) => {
     setSelect(e.target.value as string);
@@ -37,60 +28,56 @@ const SelectionCard = ({ platform, message }: props) => {
     <>
       <Card className={selectionCard.card}>
         <CardContent>
-          <Alert severity='info'>{message}</Alert>
+          <Alert severity='info'>{platform.platformInfo}</Alert>
           <FormControl
             className={selectionCard.form}
             fullWidth
             size='small'
             variant='outlined'
           >
-            <InputLabel>{index}</InputLabel>
+            <InputLabel>{platform.platformName}</InputLabel>
             <Select
               value={select}
               onChange={handleSelect}
-              label={index}
+              label={platform.platformName}
             >
-              <MenuItem value='DEFAULT'>DEFAULT</MenuItem>
-              {list.map((data) => (
-                <MenuItem key={data.shortcode} value={data.fullname}>
-                  {data.shortcode}
+              {platformList.map((list) => (
+                <MenuItem key={list.id} value={list.name}>
+                  {list.id}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
           <TextField
-          fullWidth
+            fullWidth
             size='small'
             variant='outlined'
             disabled
             label='Selected'
             value={select}
           />
-          <Button
-            style={{ marginTop: 10 }}
-            disabled={select === "DEFAULT"}
-            endIcon={<GraphicEqIcon />}
-          >
-            Explore
-          </Button>
+          <Link href={`/${select}`} passHref>
+            <Button style={{ marginTop: 10 }} endIcon={<GraphicEqIcon />}>
+              Explore
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </>
   );
-}
+};
+export default SelectionCard;
 
 const useStyles = makeStyles((theme) => ({
   form: {
-    margin: "15px 0",
-    minWidth: "250px",
+    margin: '15px 0',
+    minWidth: '250px',
   },
 
   card: {
-    maxWidth: "400px",
-    [theme.breakpoints.only("xs")]: {
-      minWidth: "280px",
+    maxWidth: '400px',
+    [theme.breakpoints.only('xs')]: {
+      minWidth: '280px',
     },
   },
 }));
-
-export default SelectionCard;

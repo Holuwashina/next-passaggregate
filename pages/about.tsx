@@ -1,10 +1,9 @@
 import React from 'react'
 
-const about = () => {
+export default () => {
     return (
         <h2>
             About
         </h2>
     )
 }
-export default about

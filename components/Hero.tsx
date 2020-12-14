@@ -13,7 +13,6 @@ function Hero() {
       <Grid container className={hero.gridContainer}>
         <Grid className={hero.gridLeft} item xs={12} md={5}>
           <Typography
-            style={{ fontFamily: "'Goldman' ,'Roboto'" }}
             gutterBottom
             color='textPrimary'
             variant='h1'

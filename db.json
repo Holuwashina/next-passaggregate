@@ -1,0 +1,55 @@
+{
+  "platforms": [
+    {
+      "id": 0,
+      "platformName": "University",
+      "platformImageUrl": "/images/secondary.svg",
+      "platformInfo": "Select your admitted University & explore",
+      "platformList": [
+        {
+          "id": "Tasued",
+          "name": "Tai solarin university of education"
+        },
+        {
+          "id": "Lautech",
+          "name": "Ladoke akintola university of technology"
+        },{
+          "id": "OAU",
+          "name": "Obafemi Awolowo University"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "platformName": "Polytechnic",
+      "platformImageUrl": "/images/polytechnic.svg",
+      "platformInfo": "Select your admitted polytechnic & explore",
+      "platformList": [
+        {
+          "id": "Poly-ibadan",
+          "name": "The polytechnic of ibadan"
+        },
+        {
+          "id": "Mapoly",
+          "name": "Moshood abiola polytechnic"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "platformName": "Sec School",
+      "platformImageUrl": "/images/university.svg",
+      "platformInfo": "Explore JSS1 - JSS3 & SSS1 - SSS3 classes",
+      "platformList": [
+        {
+          "id": "JSS 1 - 3",
+          "name": "Junior secondary school"
+        },
+        {
+          "id": "SSS 1 - 3",
+          "name": "Senior secondary school"
+        }
+      ]
+    }
+  ]
+}

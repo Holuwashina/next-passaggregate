@@ -1,12 +1,13 @@
-import Image from 'next/image'
-import {useState} from 'react'
+import Image from 'next/image';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import { Tabs, Tab, Box, Grid, Paper } from '@material-ui/core';
-import {UNIVERSITY, POLYTECHNIC, SECONDARY, PLATFORM} from '../data/data';
 import SelectionCard from './SelectionCard';
+import { PlatformsDfn } from '../utils/types';
 
-const Platforms = () => {
+
+const Platform = ({ platforms }: PlatformsDfn) => {
   const platForm = useStyles();
   const [value, setValue] = useState(0);
 
@@ -18,47 +19,34 @@ const Platforms = () => {
     <div className={platForm.root}>
       <Paper square elevation={3} className={platForm.tabBar}>
         <Tabs value={value} centered onChange={handleChange}>
-          <Tab label='University' {...a11yProps(0)} />
-          <Tab label='Polytechnic' {...a11yProps(1)} />
-          <Tab label='Secondary School' {...a11yProps(2)} />
+          {platforms.map((platform) => (
+            <Tab key={platform.id} label={platform.platformName} {...a11yProps(platform.id)} />
+          ))}
         </Tabs>
       </Paper>
 
-      {PLATFORM.map((data) => (
-        <TabPanel key={data.index} value={value} index={data.index}>
+      {platforms.map((platform: any) => (
+        <TabPanel key={platform.id} value={value} index={platform.id}>
           <Grid container justify='center' alignItems='center'>
             <Grid className={platForm.grid} item sm={12} md={5}>
-              <Image src={data.img} width={800} height={500} alt='' />
+              <Image src={platform.platformImageUrl} width={800} height={500} alt={platform.platformName} />
             </Grid>
 
             <Grid className={platForm.grid} item sm={12} md={7}>
-              {data.index === 0 && (
-                <SelectionCard
-                  platform={UNIVERSITY}
-                  message='Select your admitted University & explore.'
-                />
-              )}
+              {platform.id === 0 && <SelectionCard platform={platforms[0]} />}
 
-              {data.index === 1 && (
-                <SelectionCard
-                  platform={POLYTECHNIC}
-                  message='Select your admitted Polytechnic & explore.'
-                />
-              )}
+              {platform.id === 1 && <SelectionCard platform={platforms[1]} />}
 
-              {data.index === 2 && (
-                <SelectionCard
-                  platform={SECONDARY}
-                  message='Explore JSS1 - JSS3 & SSS1 - SSS3 classes.'
-                />
-              )}
+              {platform.id === 2 && <SelectionCard platform={platforms[2]} />}
             </Grid>
           </Grid>
         </TabPanel>
       ))}
     </div>
   );
-}
+};
+
+export default Platform;
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -79,7 +67,7 @@ const TabPanel = (props: TabPanelProps) => {
       {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
-}
+};
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -87,12 +75,12 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-const a11yProps = (index:any) => {
+const a11yProps = (index: any) => {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
   };
-}
+};
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -103,12 +91,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tabBar: {
     maxWidth: 500,
-    margin: 'auto'
+    margin: 'auto',
   },
   grid: {
     display: 'flex',
     justifyContent: 'center',
   },
 }));
-
-export default Platforms

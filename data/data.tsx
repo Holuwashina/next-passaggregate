@@ -17,7 +17,7 @@ export const POLYTECHNIC = {
   list: [
     {
       shortcode: "POLY IBADAN",
-      fullname: "The Polytechnic Ibadan"
+      fullname: "The Polytechnic of Ibadan"
     },
     {
       shortcode: "MAPOLY",

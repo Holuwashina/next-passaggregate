@@ -21,7 +21,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "next.config.js", "components/Platform.tsx",
+    "**/*.tsx", "next.config.js", "components/SelectionCard.tsx",
   ],
   "exclude": [
     "node_modules"
