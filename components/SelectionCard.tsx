@@ -66,7 +66,6 @@ const SelectionCard = ({ platform }: PlatformDfn) => {
     </>
   );
 };
-export default SelectionCard;
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -81,3 +80,5 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+export default SelectionCard;

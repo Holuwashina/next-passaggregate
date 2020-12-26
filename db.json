@@ -8,14 +8,14 @@
       "platformList": [
         {
           "id": "Tasued",
-          "name": "Tai solarin university of education"
+          "name": "Tai-solarin-university-of-education"
         },
         {
           "id": "Lautech",
-          "name": "Ladoke akintola university of technology"
+          "name": "Ladoke-akintola-university-of-technology"
         },{
           "id": "OAU",
-          "name": "Obafemi Awolowo University"
+          "name": "Obafemi-Awolowo-University"
         }
       ]
     },

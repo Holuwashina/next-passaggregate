@@ -5,7 +5,7 @@ import { Grid, Button, Typography } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
-function Hero() {
+const Hero = () => {
   const hero = useStyles();
 
   return (
@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 32,
     backgroundColor: theme.palette.primary.main,
   },
+  
   gridContainer: {
     padding: '0 50px',
     [theme.breakpoints.down('sm')]: {

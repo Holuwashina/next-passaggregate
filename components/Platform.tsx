@@ -46,7 +46,6 @@ const Platform = ({ platforms }: PlatformsDfn) => {
   );
 };
 
-export default Platform;
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -98,3 +97,5 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: 'center',
   },
 }));
+
+export default Platform;

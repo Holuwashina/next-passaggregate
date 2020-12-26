@@ -47,7 +47,7 @@ const theme = createMuiTheme({
         body1: {
             fontWeight: 600,
             letterSpacing: '0.05em',
-            fontSize: '0.7rem',
+            fontSize: '0.75rem',
             '@media (min-width:600px)': {
                 fontSize: '0.9rem',
             }
@@ -86,7 +86,7 @@ const theme = createMuiTheme({
                 letterSpacing: '0.1em',
             },
             containedSizeSmall: {
-                fontSize: '0.65rem',
+                fontSize: '0.55rem',
             },
             containedPrimary: {
                 backgroundColor: indigo[900],

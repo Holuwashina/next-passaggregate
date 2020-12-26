@@ -6,25 +6,23 @@ import { PlatformsDfn } from '../utils/types'
 
 
 const Home = ({ platforms }: PlatformsDfn) => {
+  // platforms[0].platformList.map((e) => {
+  //   console.log(e.name)
+  // })
   return (
-    <>
+    <div>
       <Hero />
       <HeroNote />
       <Platform platforms={platforms} />
-    </>
+    </div>
   )
 }
 
+//http://json-db-passa.herokuapp.com/platforms
 export const getStaticProps: GetStaticProps = async () => {
   //Fetch the platform 
-  const platform_res = await fetch('http://json-db-passa.herokuapp.com/platforms')
+  const platform_res = await fetch('http://localhost:4000/platforms')
   const platforms = await platform_res.json()
-
-  if (!platforms) {
-    return {
-      notFound: true,
-    }
-  }
 
   //Return the platform as props
   return {
