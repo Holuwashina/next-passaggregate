@@ -16,7 +16,7 @@ const Home = ({platform}) => {
 export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
     console.log(slug)
     //Fetch the platform 
-    const platform_res = await fetch(`http://localhost:4000/platforms/?slug=${slug}`)
+    const platform_res = await fetch(`http://json-db-passa.herokuapp.com/platforms/?slug=${slug}`)
     const found = await platform_res.json()
 
     //Return the platform as props
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
 
 
 export async function getStaticPaths() {
-    const platform_res = await fetch('http://localhost:4000/platforms')
+    const platform_res = await fetch('http://json-db-passa.herokuapp.com/platforms')
     const platforms = await platform_res.json()
     console.log(platforms.platformList)
 
