@@ -2,8 +2,7 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import SlugHero from '../components/SlugHero'
 import { PlatformsDfn } from '../utils/types';
 
-const Home = ({platform}) => {
-    console.log(platform.platformList)
+const Home = () => {
     return (
         <div>
             <SlugHero />
@@ -13,7 +12,7 @@ const Home = ({platform}) => {
 
 
 //http://json-db-passa.herokuapp.com/platforms
-export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
+export const getStaticProps = async ({params: {slug}}) => {
     console.log(slug)
     //Fetch the platform 
     const platform_res = await fetch(`http://json-db-passa.herokuapp.com/platforms/?slug=${slug}`)
@@ -28,7 +27,7 @@ export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
 }
 
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
     const platform_res = await fetch('http://json-db-passa.herokuapp.com/platforms')
     const platforms = await platform_res.json()
     console.log(platforms.platformList)
