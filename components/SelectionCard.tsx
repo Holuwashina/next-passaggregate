@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import {
@@ -13,9 +13,14 @@ import {
   CardContent,
   Button,
 } from '@material-ui/core';
-import { PlatformDfn } from '../utils/types';
+import { Platforms } from '../utils/types';
 
-const SelectionCard = ({ platform }: PlatformDfn) => {
+type Props = {
+  platform: Platforms;
+};
+
+const SelectionCard = ({ platform }: Props) => {
+
   const { platformList } = platform;
   const selectionCard = useStyles();
   const [select, setSelect] = useState(platformList[0].name);
@@ -56,7 +61,7 @@ const SelectionCard = ({ platform }: PlatformDfn) => {
             label='Selected'
             value={select}
           />
-          <Link href={`/${select}`} passHref>
+          <Link href={`/platform/${select}`} passHref>
             <Button style={{ marginTop: 10 }} endIcon={<GraphicEqIcon />}>
               Explore
             </Button>
@@ -67,7 +72,7 @@ const SelectionCard = ({ platform }: PlatformDfn) => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   form: {
     margin: '15px 0',
     minWidth: '250px',

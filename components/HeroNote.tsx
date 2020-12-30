@@ -1,4 +1,4 @@
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import { SiZWave, SiWheniwork, SiTalend } from 'react-icons/si';
 
@@ -47,7 +47,7 @@ const HeroNote = () => {
 }
 
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     marginTop: -60,
   },

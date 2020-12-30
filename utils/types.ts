@@ -1,31 +1,19 @@
-export type PlatformsDfn = {
-    platforms: {
+export type Platforms = {
         id: number,
         platformName: string,
         platformImageUrl: string,
         platformInfo: string,
-        platformSlug: (string[]),
         platformList: [
             {
                 id: string,
                 name: string
             }
         ]
-    }[]
 };
 
-export type PlatformDfn = {
-    platform: {
-        id: number,
-        platformName: string,
-        platformImageUrl: string,
-        platformInfo: string,
-        platformSlug: (string[]),
-        platformList: [
-            {
-                id: string,
-                name: string
-            }
-        ]
-    }
+export type School = {
+    id: string,
+    slug: string,
+    name: string,
+    info: string
 };

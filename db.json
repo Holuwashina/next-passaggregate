@@ -51,5 +51,23 @@
         }
       ]
     }
+  ],
+  "schools" : [
+    {
+      "id": "Tasued",
+      "slug": "Tai-solarin-university-of-education",
+      "name": "TAI SOLARIN UNIVERSITY OF EDUCATION IJAGUN, IJEBU-ODE.",
+      "info": "The Nation's Premier University of Education, the unique selling proposition is formula 1-2-8 [ 1st in Nigeria, 2nd in Africa and 8th in the world ] as claimed."
+    },
+    {
+      "id": "Lautech",
+      "slug": "Ladoke-akintola-university-of-technology",
+      "name": "LADOKE AKINTOLA UNIVERSITY OF TECHNOLOGY."
+    },
+    {
+      "id": "OAU",
+      "slug": "Obafemi-Awolowo-University",
+      "name": "OBAFEMI AWOLOWO UNIVERSITY."
+    }
   ]
 }

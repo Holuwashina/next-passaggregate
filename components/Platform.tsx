@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import { Tabs, Tab, Box, Grid, Paper } from '@material-ui/core';
 import SelectionCard from './SelectionCard';
-import { PlatformsDfn } from '../utils/types';
+import { Platforms } from '../utils/types';
 
+type Props = {
+  platforms: Platforms[];
+};
 
-const Platform = ({ platforms }: PlatformsDfn) => {
+const Platform = ({ platforms }: Props) => {
   const platForm = useStyles();
   const [value, setValue] = useState(0);
 
